@@ -11,15 +11,15 @@
 const int DHTPin = 2;
 DHT dht(DHTPin, DHTTYPE);
 
-void dhtBegin(){
+void dhtBegin(){  //funcion para inicializar dht
   dht.begin();
 }
 
 void readDht() {
-  h = dht.readHumidity();
-  t = dht.readTemperature();
+  h = dht.readHumidity();      //lee humedad
+  t = dht.readTemperature();   //lee temperatura
 
-  if (isnan(h) || isnan(t)) {
+  if (isnan(h) || isnan(t)) {  //si la lectura fallo
       Serial.println("Failed to read from DHT sensor!");
       return;
   }
